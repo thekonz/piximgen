@@ -1,4 +1,5 @@
 <?php
+namespace \thekonz\PixImGen;
 
 /**
 * PixImGen
@@ -42,7 +43,7 @@ class PixImGen
 	 * Constructor.
 	 * @param array
 	 */
-	public function __construct(array $settings = array()) 
+	public function __construct(array $settings = []) 
 	{
 		$this->setSettings($settings);
 	}
@@ -51,10 +52,10 @@ class PixImGen
 	 * Sets $this->settings.
 	 * @param array
 	 */
-	public function setSettings(array $settings)
+	public function setSettings(\array $settings)
 	{
-		$this->defaultSettings['seed'] = time();
-		$this->settings = array_merge(
+		$this->defaultSettings['seed'] = \time();
+		$this->settings = \array_merge(
 			$this->defaultSettings,
 			array_filter($settings, 'trim')
 		);
@@ -106,12 +107,12 @@ class PixImGen
 	 */
 	private function createImage()
 	{
-		$image = new Imagick();
+		$image = new \Imagick();
 
 		$image->newImage(
 			$this->settings['width'] * $this->settings['blocksize'],
 			$this->settings['height'] * $this->settings['blocksize'],
-			new ImagickPixel('transparent'),
+			new \ImagickPixel('transparent'),
 			'PNG'
 		);
 		
@@ -122,7 +123,7 @@ class PixImGen
 	 * Paints the Imagick object row by row.
 	 * @param  Imagick $image
 	 */
-	private function paintRows(Imagick $image)
+	private function paintRows(\Imagick $image)
 	{
 		for($i = 0; $i < $this->settings['height']; $i++) 
 			$this->paintRow($image, $i);
@@ -133,7 +134,7 @@ class PixImGen
 	 * @param  Imagick $image The Imagick object to paint on.
 	 * @param  int     $row Number of the row.
 	 */
-	private function paintRow(Imagick $image, $row)
+	private function paintRow(\Imagick $image, $row)
 	{
 		for ($i=0; $i < $this->settings['width']; $i++)
 			$this->paintBlock($image, $row, $i);
@@ -145,14 +146,14 @@ class PixImGen
 	 * @param  int     $row    The Number of the row.
 	 * @param  int     $column The Number of the column.
 	 */
-	private function paintBlock(Imagick $image, $row, $column)
+	private function paintBlock(\Imagick $image, $row, $column)
 	{
 		$x1 = $column * $this->settings['blocksize'];
 		$y1 = $row * $this->settings['blocksize'];
 		$x2 = $x1 + $this->settings['blocksize'];
 		$y2 = $y1 + $this->settings['blocksize'];
 
-		$draw = new ImagickDraw();
+		$draw = new \ImagickDraw();
 		
 		$draw->setFillColor($this->generateColor());
 		$draw->rectangle($x1, $y1, $x2, $y2);
@@ -167,7 +168,7 @@ class PixImGen
 	 */
 	private function generateColor()
 	{
-		return new ImagickPixel('rgb('.
+		return new \ImagickPixel('rgb('.
 			implode(',', [
 				rand(
 					$this->settings['minredsaturation'],
