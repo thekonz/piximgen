@@ -52,7 +52,7 @@ class PixImGen
 	 * Sets $this->settings.
 	 * @param array
 	 */
-	public function setSettings(\array $settings)
+	public function setSettings(array $settings)
 	{
 		$this->defaultSettings['seed'] = \time();
 		$this->settings = \array_merge(
