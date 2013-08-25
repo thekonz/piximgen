@@ -56,7 +56,9 @@ echo $image->getImage();
 
 * Look at your image!
 
-![Image]()
+![Image](http://imgur.com/yMS6L7W.png)
+
+If you play around with the settings (especially the saturation settings), you can get some pretty cool images. 
 
 ## Complete list of settings
 
