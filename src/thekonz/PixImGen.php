@@ -25,9 +25,9 @@ class PixImGen
 	 */
 	private $defaultSettings = [
 		'seed' => 0,
+		'blocksize' => 15,
 		'width' => 10,
 		'height' => 10,
-		'blocksize' => 15,
 
 		'minredsaturation' => 0,
 		'maxredsaturation' => 255,
