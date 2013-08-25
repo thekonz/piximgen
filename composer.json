@@ -21,7 +21,7 @@
 		}
 	],
 	"autoload": {
-		"psr-0": ["src/"]
+		"psr-0": {"thekonz\\":"src/"}
 	},
 	"minimum-stability":"dev",
 	"extra": {
