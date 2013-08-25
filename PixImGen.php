@@ -62,7 +62,7 @@ class PixImGen
 	private function createImage()
 	{
 		$image = new Imagick();
-		$image->newPseudoImage($this->settings['width']*$this->settings['blocksize'], $this->settings['height']*$this->settings['blocksize'], 'NULL');
+		$image->newPseudoImage($this->settings['width']*$this->settings['blocksize'], $this->settings['height']*$this->settings['blocksize'], 'NULL:');
 		$image->setImageFormat('PNG64');
 		return $image;
 	}
