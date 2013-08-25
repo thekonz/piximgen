@@ -23,7 +23,7 @@ class PixImGen
 	 * Default settings for the image.
 	 * @var array
 	 */
-	private $defaultSettings = [
+	private $defaultSettings = array(
 		'seed' => 0,
 		'blocksize' => 15,
 		'width' => 10,
@@ -37,13 +37,13 @@ class PixImGen
 
 		'minbluesaturation' => 0,
 		'maxbluesaturation' => 255,
-	];
+	);
 
 	/**
 	 * Constructor.
 	 * @param array
 	 */
-	public function __construct(array $settings = []) 
+	public function __construct(array $settings = array()) 
 	{
 		$this->setSettings($settings);
 	}
@@ -169,7 +169,7 @@ class PixImGen
 	private function generateColor()
 	{
 		return new \ImagickPixel('rgb('.
-			implode(',', [
+			implode(',', array(
 				rand(
 					$this->settings['minredsaturation'],
 					$this->settings['maxredsaturation']
@@ -182,7 +182,7 @@ class PixImGen
 					$this->settings['minbluesaturation'],
 					$this->settings['maxbluesaturation']
 				)
-			]).')'
+			).')'
 		);
 	}
 }
