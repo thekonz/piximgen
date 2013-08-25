@@ -88,7 +88,7 @@ class PixImGen
 		$draw = new ImagickDraw();
 		$draw->setFillColor($this->generateColor($image));
 		$draw->rectangle($x1, $y1, $x2, $y2);
-		$image->draw($draw);
+		$image->drawImage($draw);
 	}
 
 	private function generateColor($image)
