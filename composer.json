@@ -1,0 +1,32 @@
+{
+	"name": "thekonz/piximgen",
+	"type":	"library",
+	"keywords": ["piximgen","thekonz"],
+	"description": "Pixel graphics library for PHP.",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Konstantin Zinnen",
+			"homepage": "https://github.com/thekonz"
+		}
+	],
+	"version": "1.0.0-dev",
+	"require": {
+		"php": ">=5.4.0"
+	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/thekonz/piximgen"
+		}
+	],
+	"autoload": {
+		"psr-0": ["src/"]
+	},
+	"minimum-stability":"dev",
+	"extra": {
+		"branch-alias": {
+			"dev-master":"1.0.x-dev"
+		}
+	}
+}
