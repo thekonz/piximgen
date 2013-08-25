@@ -31,9 +31,9 @@ class PixImGen
 
 	private $minSettings = [
 		'seed' => 0,
-		'width' => 10,
-		'height' => 10,
-		'blocksize' => 15,
+		'width' => 1,
+		'height' => 1,
+		'blocksize' => 1,
 		'minredsaturation' => 0,
 		'maxredsaturation' => 0,
 		'mingreensaturation' => 0,
@@ -70,13 +70,13 @@ class PixImGen
 
 		$settings = array_merge($this->defaultSettings, array_filter($settings, 'trim'));
 
-		$this->settings = array_map('capSettings', array_keys($settings), $settings);
+		$this->settings = array_map(function($key, $value) { return $this->capSettings($key, $value); }, array_keys($settings), $settings);
 
 	}
 
 	private function capSettings($key, $value)
 	{
-		# code...
+		return $key => $value;
 	}
 
 	public function getImage()
