@@ -29,32 +29,6 @@ class PixImGen
 		'maxbluesaturation' => 255,
 	];
 
-	private $minSettings = [
-		'seed' => 0,
-		'width' => 1,
-		'height' => 1,
-		'blocksize' => 1,
-		'minredsaturation' => 0,
-		'maxredsaturation' => 0,
-		'mingreensaturation' => 0,
-		'maxgreensaturation' => 0,
-		'minbluesaturation' => 0,
-		'maxbluesaturation' => 0,
-	];
-
-	private $maxSettings = [
-		'seed' => PHP_INT_MAX,
-		'width' => 15,
-		'height' => 15,
-		'blocksize' => 25,
-		'minredsaturation' => 255,
-		'maxredsaturation' => 255,
-		'mingreensaturation' => 255,
-		'maxgreensaturation' => 255,
-		'minbluesaturation' => 255,
-		'maxbluesaturation' => 255,
-	];
-
 	/**
 	 * Constructor
 	 * @param array $settings Settings for the object
@@ -68,15 +42,8 @@ class PixImGen
 	{
 		$this->defaultSettings['seed'] = time();
 
-		$settings = array_merge($this->defaultSettings, array_filter($settings, 'trim'));
+		$this->settings = array_merge($this->defaultSettings, array_filter($settings, 'trim'));
 
-		$this->settings = array_map(function($key, $value) { return $this->capSettings($key, $value); }, array_keys($settings), $settings);
-
-	}
-
-	private function capSettings($key, $value)
-	{
-		return($key => $value);
 	}
 
 	public function getImage()
