@@ -1,5 +1,5 @@
 <?php
-namespace thekonz\PixImGen;
+namespace thekonz;
 
 /**
 * PixImGen
