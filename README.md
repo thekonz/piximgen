@@ -4,11 +4,21 @@ Pixel graphics library for PHP.
 
 ## Installation
 
-via composer
+Add this to your composer.json:
 
-## Usage
+```JSON
+{
+	"require": {
+		"thekonz/piximgen": "1.0.*@dev"
+	}
+}
+```
 
-look at the sample app
+Then run `composer install` or `composer update`.
+
+## Example App
+
+Wanna try it out? Take a look at the [example app](https://github.com/thekonz/piximgengui).
 
 ## Saving the image as a file
 
