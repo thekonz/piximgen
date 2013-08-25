@@ -76,7 +76,7 @@ class PixImGen
 
 	private function capSettings($key, $value)
 	{
-		return $key => $value;
+		return($key => $value);
 	}
 
 	public function getImage()
