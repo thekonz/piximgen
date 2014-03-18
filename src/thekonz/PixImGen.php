@@ -168,7 +168,7 @@ class PixImGen
 	 */
 	private function generateColor()
 	{
-		return new \ImagickPixel('rgb('.
+		return new \ImagickPixel('rgb(' .
 			implode(',',
                 array(
     				rand(
@@ -183,8 +183,8 @@ class PixImGen
     					$this->settings['minbluesaturation'],
     					$this->settings['maxbluesaturation']
     				)
-			    ).')'
-            )
+			    )
+            ) . ')'
         );
 	}
 }
