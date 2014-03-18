@@ -169,20 +169,22 @@ class PixImGen
 	private function generateColor()
 	{
 		return new \ImagickPixel('rgb('.
-			implode(',', array(
-				rand(
-					$this->settings['minredsaturation'],
-					$this->settings['maxredsaturation']
-				), 
-				rand(
-					$this->settings['mingreensaturation'],
-					$this->settings['maxgreensaturation']
-				),
-				rand(
-					$this->settings['minbluesaturation'],
-					$this->settings['maxbluesaturation']
-				)
-			).')'
-		);
+			implode(',',
+                array(
+    				rand(
+    					$this->settings['minredsaturation'],
+    					$this->settings['maxredsaturation']
+    				), 
+    				rand(
+    					$this->settings['mingreensaturation'],
+    					$this->settings['maxgreensaturation']
+    				),
+    				rand(
+    					$this->settings['minbluesaturation'],
+    					$this->settings['maxbluesaturation']
+    				)
+			    ).')'
+            )
+        );
 	}
 }
